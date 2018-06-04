@@ -31,5 +31,5 @@ Hello!<br>
 		</table>
 	</form>
 <a href="denglu.jsp">退出</a>
-<%out.print("<script language='javascript'>alert('注册失败');window.location.herf='denglu.jsp';</script>"); %></body>
+<%out.print("<script language='javascript'>alert('用户名已存在，注册失败');window.location.herf='denglu.jsp';</script>"); %></body>
 </html>
