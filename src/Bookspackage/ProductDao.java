@@ -9,12 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 商品数据库操作
- * @author Liz YongQiang
- *
- */
-
 public class ProductDao {
 	/**
 	 * 获取数据库连接

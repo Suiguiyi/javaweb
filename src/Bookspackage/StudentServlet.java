@@ -32,14 +32,14 @@ public class StudentServlet extends HttpServlet {
 			// 获取Statement
 			Statement stmt = conn.createStatement();
 			// 添加图书信息的SQL语句
-			String sql = "select * from tb_student_batch";
+			String sql = "select id,studentId,name,sex,age,phone,email from tb_student_batch";
 			// 执行查询
 			ResultSet rs = stmt.executeQuery(sql);
 			// 实例化List对象
 			List<Student> list = new ArrayList<Student>();
 			// 判断光标向后移动，并判断是否有效
 			while(rs.next()){
-				// 实例化Book对象
+				// 实例化Student对象
 				Student student = new Student();
 				// 对id属性赋值
 				student.setId(rs.getInt("id"));
@@ -50,7 +50,7 @@ public class StudentServlet extends HttpServlet {
 				// 对sex属性赋值
 				student.setSex(rs.getString("sex"));
 				// 对age属性赋值
-				student.setAge(rs.getInt("age"));
+				student.setAge(rs.getString("age"));
 				// 对phone属性赋值
 				student.setPhone(rs.getString("phone"));
 				// 对email属性赋值

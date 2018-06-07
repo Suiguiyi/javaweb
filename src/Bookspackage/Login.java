@@ -30,8 +30,8 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		request.setCharacterEncoding("utf-8");
-		String name = request.getParameter("name");
-		String pwd = request.getParameter("password");
+		String studentId = request.getParameter("studentId");
+		String pwd = request.getParameter("pwd");
 		try {
 			// 加载数据库驱动，注册到驱动管理器
 			Class.forName("com.mysql.jdbc.Driver");
@@ -43,25 +43,20 @@ public class Login extends HttpServlet {
 			String password = "123456";
 			// 创建Connection连接
 			Connection conn = DriverManager.getConnection(url,username,password);
-			String sql ="select * from t_user where name=? and password=?";
+			String sql ="select * from tb_student_batch where studentId=? and pwd=?";
 			PreparedStatement state = conn.prepareStatement(sql);
-			state.setString(1, name);
+			state.setString(1, studentId);
 			state.setString(2, pwd);
 			ResultSet rs = state.executeQuery();
 			if(rs.next()) {
-				
-				System.out.println("成功");
 				HttpSession session=request.getSession();
-				session.setAttribute("name", name);
+				session.setAttribute("studentId", studentId);
 				response.sendRedirect("jiemian.jsp");
 				
 				}else 
 					{
-						System.out.println("失败");
 						response.sendRedirect("error.jsp");
 					}
-			
-			
 			state.close();
 			conn.close();
 			rs.close();

@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@page import="java.util.List"%>
+<%@page import="Bookspackage.Student"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>添加图书信息</title>
+<title>学生管理信息系统</title>
 <style type="text/css">
+	form{margin: 0px;}
+	td{font-size: 12px;}
+	h2{margin: 2px}
 #list{
 background-color:#BDD2ED;
 width:100%;
@@ -75,23 +79,24 @@ right:0;
 font-size:16px;
 font-family:"黑体";
 }
+#user{
+width:100%;
+top:150px;
+position:absolute;
+}
 </style>
 <script type="text/javascript">
 	function check(form){
 		with(form){
-			if(name.value == ""){
-				alert("图书名称不能为空");
+			if(bookCount.value == ""){
+				alert("请输入更新数量！");
 				return false;
 			}
-			if(price.value == ""){
-				alert("价格不能为空");
+			if(isNaN(bookCount.value)){
+				alert("格式错误！");
 				return false;
 			}
-			if(author.value == ""){
-				alert("作者不能为空");
-				return false;
-			}
-			return true;
+			return true;;
 		}
 	}
 </script>
@@ -102,46 +107,60 @@ font-family:"黑体";
 <div id="rightt">当前用户：${studentId}<a href="denglu.jsp">退出</a></div></div>
 <ul id="list">
 <li><a href="jiemian.jsp">返回首页</a></li>
-<li><a href="GerenServlet">个人信息</a></li>
+  <li><a href="GerenServlet">个人信息</a></li>
   <li><a href="Class.jsp">班级信息</a></li>
   <li><a href="StudentServlet">学生信息</a></li>
   <li><a href="FindServlet">图书</a></li>
   <li><a href="Kebiao.jsp">课表</a></li>
   <li><a href="ChengjiServlet">成绩</a></li>
-</ul><br>
-	<form action="Addbook.jsp" method="post" onsubmit="return check(this);">
-		<table align="center" width="600">
-			<tr>
-				<td align="center" colspan="2">
-					<h2>添加图书信息</h2>
-					<hr>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">图书名称：</td>
-				<td><input type="text" name="name" /></td>
-			</tr>
-			<tr>
-				<td align="right">价　　格：</td>
-				<td><input type="text" name="price" /></td>
-			</tr>
-			<tr>
-				<td align="right">数　　量：</td>
-				<td><input type="text" name="bookCount" /></td>
-			</tr>
-			<tr>
-				<td align="right">作　　者：</td>
-				<td><input type="text" name="author" /></td>
-			</tr>
-			
-			<tr>
-				<td align="center" colspan="2">
-					<input type="submit" value="添　加">
-				</td>
-			</tr>
-		</table>
-	</form>
-<a href="FindServlet">退出</a>
-<%out.print("<script language='javascript'>alert('添加成功');window.location.herf='denglu.jsp';</script>"); %>
+</ul>
+<div id="user">
+	<table align="center" width="650" border="1" height="170" bordercolor="white" bgcolor="blue" cellpadding="0" cellspacing="0">
+		<tr bgcolor="white">
+			<td align="center" colspan="10">
+				<h2>个人学生信息</h2>
+			</td>
+		</tr>
+		<tr align="center" bgcolor="#e1ffc1" >
+		    <td><b>Id</b></td>
+			<td><b>学号</b></td>
+			<td><b>姓名</b></td>
+			<td><b>性别</b></td>
+			<td><b>年龄</b></td>
+			<td><b>电话</b></td>
+			<td><b>Email</b></td>
+			<td><b>密码</b></td>
+			<td><b>问题</b></td>
+			<td><b>答案</b></td>
+		</tr>
+			<%
+				// 获取图书信息集合
+					List<Student> list = (List<Student>)request.getAttribute("list");
+			// 判断集合是否有效
+			if(list == null || list.size() < 1){
+						out.print("没有数据！");
+					}else
+	           {
+						// 遍历学生集合中的数据
+						for(Student student : list){
+			%>
+				<tr align="center" bgcolor="white">
+				    <td><%=student.getId() %></td>
+					<td><%=student.getStudentId()%></td>
+					<td><%=student.getName()%></td>
+					<td><%=student.getSex()%></td>
+					<td><%=student.getAge()%></td>
+					<td><%=student.getPhone()%></td>
+					<td><%=student.getEmail()%></td>
+					<td><%=student.getPwd()%></td>
+					<td><%=student.getQuestion()%></td>
+					<td><%=student.getAnswer()%></td>
+				</tr>
+			<%
+					}
+				}
+			%>
+	</table>
+<br><br></div>
 </body>
 </html>

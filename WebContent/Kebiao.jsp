@@ -8,8 +8,17 @@
 <title>学生管理信息系统首页</title>
 <style type="text/css">
 #list{
+background-color:#BDD2ED;
 width:100%;
-height:50px;
+height:30px;
+padding-top:1px;
+padding-left:1px;
+border-bottom:1px solid blue;
+padding-bottom:1px;
+padding-right:1px;
+top:35px;left:0;right:0;
+position:absolute;
+font-family:"微软雅黑";
 }
 #list li{
 float:left;
@@ -18,63 +27,79 @@ list-style-type:none;
 #list li a{
 color:#000000;
 text-decoration:none;
-padding-top:4px;
+padding-top:0px;
 display:block;
 width:100px;
 height:25px;
 text-align:center;
-background-color:#F9F9F9;
-margin-left:2px;
+background-color:#77E877;
+margin-left:1px;
 border-radius:5px;
 }
 #list li a:hover{
-background:#BBBBBB;
+background:#DFE9F5;
 color：#FFFFFF；
 }
 #list li a.actiove{
 border:1px solid #ffffff;
 border-top-color:#808080;
 border-left-color:#808080;
-background-color:#d4d0c8;
+background-color:#D1E4FD;
 }
-#main{
-left:50px;
-right:60px;
-top:120px;
-bottom:0px;
-border:2px solid black;
-text-align:center;
+#top{
+background-color:#DFE9F5;
+border-bottom:1px solid blue;
+width:100%;
+height:50px;
+top:0;left:0;right:0;
+position:absolute;
+
 }
 #leftt{
-width:200px;
-height:25px;
-text-align:left;
-top:10px;
-left:10px;
+width:400px;
+height:43px;
+text-align:center;
+top:5px;
+left:0;
+font-size:32px;
+font-family:"华文隶书";
+position:absolute;
 }
 #rightt{
-width:200px;
-height:25px;
-text-align:right;
+width:220px;
+height:43px;
+text-align:left;
 position:absolute;
-top:10px;
-right:10px;
+top:5px;
+right:0;
+font-size:16px;
+font-family:"黑体";
+}
+#main{
+left:20px;
+right:20px;
+top:110px;
+bottom:0px;
+position:absolute;
+text-align:center;
 }
 </style>
 </head>
-<body background="C:\Users\SGY\Desktop\背景\4.jpg">
-<div id="leftt">Welcome to the system！</div>
-<div id="rightt">当前用户：${name}</div>
+<body background="C:\Users\SGY\Desktop\背景\12.jpg">
+<div id="top">
+<div id="leftt">信管161 学生管理信息系统</div>
+<div id="rightt">当前用户：${studentId}<a href="denglu.jsp">退出</a></div></div>
 <ul id="list">
+<li><a href="jiemian.jsp">返回首页</a></li>
+<li><a href="GerenServlet">个人信息</a></li>
   <li><a href="Class.jsp">班级信息</a></li>
   <li><a href="StudentServlet">学生信息</a></li>
   <li><a href="FindServlet">图书</a></li>
   <li><a href="Kebiao.jsp">课表</a></li>
   <li><a href="ChengjiServlet">成绩</a></li>
-  <li><a href="denglu.jsp"><b>退出登录</b></a></li>
 </ul>
 <div id="main">
-<table width=100% height=100% border="1">
+<table  border="1" bgcolor="white">
 <tr>
 <td>时间</td><td>星期一</td><td>星期二</td><td>星期三</td><td>星期四</td><td>星期五</td></tr><tr><td>第一，二节</td><td></td><td>计算机网络<br>周二第1,2节{第1-15周|单周}<br>李绪诚<br>明俊楼509D</td>
 <td></td><td>数据结构<br>周四第1,2节{第1-16周}<br>朱仲忠<br>明俊楼407D</td><td>面向对象程序设计<br>周五第1,2节{第1-16周}<br>何庆<br>明俊楼408D</td></tr><tr><td>第三，四节</td><td>信息系统分析与设计<br>

@@ -46,7 +46,6 @@ bottom:0px;
 	
 	<input type="submit" name="Button" value="登陆" id="Button"/>
 	
-	<a href="NewFile.jsp">注册</a>
 	<a href="CHZHmima.jsp">重置密码</a>
 </div>
 <div id="footer">

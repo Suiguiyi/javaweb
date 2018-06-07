@@ -46,7 +46,6 @@ value="请输入学号" onfocus="if (this.value=='请输入学号') {this.value=
 	
 	<input type="submit" name="Button" value="登陆" id="Button"/>
 	
-	<a href="NewFile.jsp">注册</a>
 	<a href="CHZHmima.jsp">重置密码</a>
 </div>
 <div id="footer">
