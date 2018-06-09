@@ -57,5 +57,8 @@ color:blue;
 <small>信管161班web开发 联系：12345xx</small>
 </div>
 </form>
+	<%out.print("<script language='javascript'>alert('注册成功');window.location.herf='denglu.jsp';</script>"); %>
+
 </body>
 </html>
+

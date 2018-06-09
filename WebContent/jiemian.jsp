@@ -109,7 +109,6 @@ top:150px;
 
 <ul id="list">
  <li><a href="jiemian.jsp">返回首页</a></li>
-  <li><a href="GerenServlet">个人信息</a></li>
   <li><a href="Class.jsp">班级信息</a></li>
   <li><a href="StudentServlet">学生信息</a></li>
   <li><a href="FindServlet">图书</a></li>	
