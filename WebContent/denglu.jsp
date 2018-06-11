@@ -13,7 +13,7 @@ height:100px;
 text-align:center;
 margin:0 auto;
 font-size:26px;
-color:black;
+color:white;
 }
 #main{
 width:250px;
@@ -46,7 +46,7 @@ color:blue;
 <br/><br/>
 <form action="Login" method="post">
 <div id="main"><br/>
-用户名：<input name="studentId" type="text" placeholder="请输入用户名"><br><br>
+用户名：<input name="studentId" type="text" placeholder="请输入学号"><br><br>
 密&nbsp;&nbsp;码：<input name="pwd" type="password" placeholder="请输入密码"><br/><br/>
 	
 	<input type="submit" name="Button" value="登陆" id="Button"/>

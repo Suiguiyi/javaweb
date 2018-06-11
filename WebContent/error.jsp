@@ -13,27 +13,32 @@ height:100px;
 text-align:center;
 margin:0 auto;
 font-size:26px;
+color:white;
 }
 #main{
 width:250px;
-height:125px;
-border:2px solid blue;
+height:150px;
+border:2px solid white;
+border-top:30px solid blue;
+border-radius:10px;
 background-color:white;
 text-align:center;
 margin:0 auto;
 top:80px;
-
+color:blue;
 }
 #footer{
-width:100%;
-height:10px;
+width:200px;
+height:25px;
 text-align:right;
 position:absolute;
-bottom:0px;
+bottom:5px;
+right:10px;
+color:blue;
 }
 </style>
 </head>
-<body background="C:\Users\SGY\Desktop\背景\4.jpg">
+<body background="C:\Users\SGY\Desktop\背景\6.jpg">
 <div id="top">
 <b>学生管理信息系统<br/>
 用户登录</b>
@@ -41,17 +46,18 @@ bottom:0px;
 <br/><br/>
 <form action="Login" method="post">
 <div id="main"><br/>
-用户名：<input name="name" type="text" id="name" value="请输入学号" onfocus="if (this.value=='请输入学号') {this.value='';this.style.color='#000';}" onblur="if (this.value=='') {this.value='请输入学号';this.style.color='gray'}" maxlength="50"><br/><br/>
-密&nbsp;&nbsp;码：<input name="password" type="password" id="password" size="20" maxlength="50"><br/><br/>
+用户名：<input name="studentId" type="text" placeholder="请输入用户名"><br><br>
+密&nbsp;&nbsp;码：<input name="pwd" type="password" placeholder="请输入密码"><br/><br/>
 	
 	<input type="submit" name="Button" value="登陆" id="Button"/>
-	
-	<a href="CHZHmima.jsp">重置密码</a>
+
+	<a href="NewFile2.jsp">注册</a>
 </div>
 <div id="footer">
 <small>信管161班web开发 联系：12345xx</small>
 </div>
 </form>
+</body>
 <%out.print("<script language='javascript'>alert('用户名不存在或密码错误');window.location.herf='denglu.jsp';</script>"); %>
 </body>
 </html>

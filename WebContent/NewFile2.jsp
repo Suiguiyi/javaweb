@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户注册</title>
+<style type="text/css">
+#main{
+color:white;
+}
+</style>
 <script type="text/javascript">
 	function check(form){
 		with(form){
@@ -51,6 +56,7 @@
 </script>
 </head>
 <body background="C:\Users\SGY\Desktop\背景\6.jpg">
+<div id="main">
 	<form action="AddUser.jsp" method="post" onsubmit="return check(this);">
 		<table align="center" width="450">
 			<tr>
@@ -102,6 +108,6 @@
 			</tr>
 		</table>
 	</form>
-	<a href="denglu.jsp">返回</a>
+	<a href="denglu.jsp">返回</a></div>
 </body>
 </html>
