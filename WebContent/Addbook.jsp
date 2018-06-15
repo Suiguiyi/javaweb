@@ -44,7 +44,6 @@
 			// 判断是否更新成功
 			if(row > 0){
 				// 更新成输出信息
-				System.out.println("成功");
 				response.sendRedirect("NewFile8.jsp");
 				
 			}
@@ -53,7 +52,6 @@
 			// 关闭Connection，释放资源
 			conn.close();
 		} catch (Exception e) {
-			System.out.println("失败");
 			response.sendRedirect("NewFile9.jsp");
 			
 			e.printStackTrace();

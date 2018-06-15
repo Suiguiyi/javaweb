@@ -6,6 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户注册</title>
+<%
+	// 权限验证
+	if(session.getAttribute("studentId")==null){
+		response.sendRedirect("denglu.jsp");
+		return;
+	}
+%>
 <style type="text/css">
 #main{
 color:white;

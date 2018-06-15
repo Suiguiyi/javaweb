@@ -1,5 +1,4 @@
 package Bookspackage;
-
 public class Book {
 public static final int PAGE_SIZE=4;
 private int id;

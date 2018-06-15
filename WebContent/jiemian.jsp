@@ -5,6 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学生管理信息系统首页</title>
+<%
+	// 权限验证
+	if(session.getAttribute("studentId")==null){
+		response.sendRedirect("denglu.jsp");
+		return;
+	}
+%>
 <style type="text/css">
 #list{
 background-color:#BDD2ED;
